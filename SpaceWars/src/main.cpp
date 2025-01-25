@@ -1,8 +1,8 @@
 #include <iostream>
 #include <memory>
 #include <SFML/Graphics.hpp>
-
 #include "framework/application.h"
+
 
 int main()
 {

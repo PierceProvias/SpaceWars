@@ -1,8 +1,13 @@
 add_executable(${SPACE_WARS_GAME_TARGET_NAME}
+    #${CMAKE_CURRENT_SOURCE_DIR}/include/framework/${INCLUDE_FILES}
+    #{CMAKE_CURRENT_SOURCE_DIR}/src/framework/${SRC_FILES}
     ${CMAKE_CURRENT_SOURCE_DIR}/include/framework/application.h
     ${CMAKE_CURRENT_SOURCE_DIR}/src/framework/application.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/src/main.cpp
 )
+
+file(GLOB INCLUDE_FILES CMAKE_CONFIGURE_DEPENDS "*.h")
+file(GLOB SRC_FILES CONFIGURE_DEPENDS "*.cpp")
 
 target_include_directories(${SPACE_WARS_GAME_TARGET_NAME} PUBLIC
     ${CMAKE_CURRENT_SOURCE_DIR}/include

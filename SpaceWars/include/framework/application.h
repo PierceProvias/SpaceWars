@@ -10,9 +10,11 @@ namespace sw
         Application();
         void Run();
     private:
-
-        void Tick(float DeltaTime);
-        void Render();
+        void TickInternal(float DeltaTime);
+        virtual void Tick(float DeltaTime);
+        // Template function
+        void RenderInternal();
+        virtual void Render();
         sf::RenderWindow m_Window;
         float m_TargetFrameRate;
         sf::Clock m_TickClock;

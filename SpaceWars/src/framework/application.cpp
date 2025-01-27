@@ -32,19 +32,35 @@ namespace sw
             while(AccumulatedTime)
             {
                 AccumulatedTime -= TargetDeltaTime;
-                Tick(TargetDeltaTime);
-                Render();
+                TickInternal(TargetDeltaTime);
+                RenderInternal();
             }
         }
     }
 
+    void Application::TickInternal(float DeltaTime)
+    {
+        Tick(DeltaTime);
+    }
+    
     void Application::Tick(float DeltaTime)
     {
         std::cout << "Tick rate: " << 1.f/DeltaTime << std::endl;
     }
     
+    void Application::RenderInternal()
+    {
+        m_Window.clear();
+        Render();
+        m_Window.display();
+    }
+
     void Application::Render()
     {
-
+        sf::RectangleShape rect(sf::Vector2f(1000,1000));
+        rect.setFillColor(sf::Color::Cyan);
+        rect.setOrigin(m_Window.getSize().x/2, m_Window.getSize().y/2);
+        rect.setPosition(sf::Vector2f(m_Window.getSize().x/2, m_Window.getSize().y/2));
+        m_Window.draw(rect);
     }
 } 

@@ -1,9 +1,11 @@
 add_library(${SPACE_WARS_ENGINE_TARGET_NAME} STATIC
     ${CMAKE_CURRENT_SOURCE_DIR}/include/framework/application.h
     ${CMAKE_CURRENT_SOURCE_DIR}/include/entry_point.h
-    
+    ${CMAKE_CURRENT_SOURCE_DIR}/include/framework/core.h
+
     ${CMAKE_CURRENT_SOURCE_DIR}/src/entry_point.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/src/framework/application.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/src/framework/core.cpp
 
 )
 

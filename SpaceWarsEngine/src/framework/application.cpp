@@ -1,5 +1,6 @@
-#include <iostream>
 #include "framework/application.h"
+#include <stdio.h>
+#include "framework/core.h"
 
 namespace sw
 {
@@ -44,7 +45,8 @@ namespace sw
     
     void Application::Tick(float DeltaTime)
     {
-        std::cout << "Tick rate: " << 1.f/DeltaTime << std::endl;
+        LOG("Tick rate: %f", 1.f/DeltaTime);
+        //printf("Tick rate: %f\n", 1.f/DeltaTime);
     }
     
     void Application::RenderInternal()

@@ -1,5 +1,4 @@
 #include <iostream>
-
 #include "framework/application.h"
 
 namespace sw
@@ -58,9 +57,11 @@ namespace sw
     void Application::Render()
     {
         sf::RectangleShape rect(sf::Vector2f(1000,1000));
+        sf::CircleShape circle{sf::CircleShape{100}};
         rect.setFillColor(sf::Color::Cyan);
         rect.setOrigin(m_Window.getSize().x/2, m_Window.getSize().y/2);
         rect.setPosition(sf::Vector2f(m_Window.getSize().x/2, m_Window.getSize().y/2));
         m_Window.draw(rect);
+        m_Window.draw(circle);
     }
 } 

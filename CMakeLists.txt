@@ -5,7 +5,7 @@ project(SpaceWars
     LANGUAGES C CXX
 )
 
-set(CMAKE_CXX_STANDARD          14)
+set(CMAKE_CXX_STANDARD          17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 set(CMAKE_CXX_EXTENSIONS       OFF)
 
@@ -21,5 +21,8 @@ FetchContent_Declare(
 
 FetchContent_MakeAvailable(${SMFL_LIB_NAME})
 
+set(SPACE_WARS_ENGINE_TARGET_NAME SpaceWarsEngine)
 set(SPACE_WARS_GAME_TARGET_NAME SpaceWarsGame)
-add_subdirectory(SpaceWars)
+
+add_subdirectory(SpaceWarsEngine)
+add_subdirectory(SpaceWarsGame)

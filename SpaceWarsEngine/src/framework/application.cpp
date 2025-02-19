@@ -1,13 +1,15 @@
 #include "framework/application.h"
 #include <stdio.h>
 #include "framework/core.h"
+#include "framework/world.h"
 
 namespace sw
 {
     Application::Application()
         : m_Window{sf::VideoMode(1080, 1920), "Space Wars"},
         m_TargetFrameRate{60.f},
-        m_TickClock{}
+        m_TickClock{},
+        m_current_world{nullptr}
     {
 
     }
@@ -41,12 +43,17 @@ namespace sw
     void Application::TickInternal(float DeltaTime)
     {
         Tick(DeltaTime);
+
+        if(m_current_world)
+        {
+            m_current_world->begin_play_internal();
+            m_current_world->tick_internal(DeltaTime);
+        }
     }
     
     void Application::Tick(float DeltaTime)
     {
         LOG("Tick rate: %f", 1.f/DeltaTime);
-        //printf("Tick rate: %f\n", 1.f/DeltaTime);
     }
     
     void Application::RenderInternal()

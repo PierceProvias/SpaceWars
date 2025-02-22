@@ -10,21 +10,21 @@ namespace sw
     {
     public:
         Application();
-        void Run();
+        void run();
 
         template<typename world_type>
         weak<world_type> load_world();
 
     private:
-        void TickInternal(float DeltaTime);
-        virtual void Tick(float DeltaTime);
+        void tick_internal(float delta_time);
+        virtual void tick(float delta_time);
         // Template function
-        void RenderInternal();
-        virtual void Render();
+        void render_internal();
+        virtual void render();
         
-        sf::RenderWindow m_Window;
-        float m_TargetFrameRate;
-        sf::Clock m_TickClock;
+        sf::RenderWindow m_window;
+        float m_target_framerate;
+        sf::Clock m_tick_clock;
 
         shared<World> m_current_world;
     };

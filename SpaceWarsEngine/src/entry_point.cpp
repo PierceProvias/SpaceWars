@@ -3,7 +3,7 @@
 
 int main()
 {
-     sw::Application* app = GetApplication();
-     app->Run();
+     sw::Application* app = get_application();
+     app->run();
      delete app;    
 }

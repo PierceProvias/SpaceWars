@@ -5,4 +5,4 @@ namespace sw
     class Application;
 }
 
-extern sw::Application* GetApplication();
+extern sw::Application* get_application();

@@ -1,7 +1,7 @@
 #include "game_framework/game_application.h"
 #include "framework/world.h"
 
-sw::Application* GetApplication()
+sw::Application* get_application()
 {
     return new sw::GameApplication{};
 }

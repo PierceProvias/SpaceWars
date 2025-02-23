@@ -1,4 +1,8 @@
 add_library(${SPACE_WARS_ENGINE_TARGET_NAME} STATIC
+
+    ${CMAKE_CURRENT_SOURCE_DIR}/include/framework/actor.h
+    ${CMAKE_CURRENT_SOURCE_DIR}/src/framework/actor.cpp
+
     ${CMAKE_CURRENT_SOURCE_DIR}/include/framework/application.h
     ${CMAKE_CURRENT_SOURCE_DIR}/src/framework/application.cpp
     
